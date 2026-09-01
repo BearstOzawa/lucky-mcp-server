@@ -1,5 +1,8 @@
 # @bearst/lucky-mcp-server
 
+[![CI](https://github.com/BearstOzawa/lucky-mcp-server/actions/workflows/ci.yml/badge.svg)](https://github.com/BearstOzawa/lucky-mcp-server/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@bearst/lucky-mcp-server.svg)](https://www.npmjs.com/package/@bearst/lucky-mcp-server)
+
 中文 | [English](#english)
 
 Lucky 的 MCP Server。通过 OpenToken 调用 Lucky 3.0 HTTP API，以 stdio 提供反向代理、证书、端口转发、DDNS 及相关模块的工具。
@@ -204,7 +207,11 @@ npm run dev
 
 ## 发布
 
-创建 GitHub Release 将触发 `Publish` workflow，发布 `@bearst/lucky-mcp-server`。仓库需配置 `NPM_TOKEN`。Release tag 须与 `package.json` 的 `version` 一致（例如 `v0.1.0`）。
+版本记录见 [CHANGELOG.md](CHANGELOG.md)。
+
+创建 GitHub Release 会触发 `Publish` workflow。仓库 Secrets 需配置 `NPM_TOKEN`（npm granular token，具备 `@bearst/lucky-mcp-server` 发布权限）。Release tag 须与 `package.json` 的 `version` 一致，例如 `v0.1.2`。
+
+`Publish` 只在 Release 或手动 `workflow_dispatch` 时运行，不会在 push 时发版。
 
 ## License
 
@@ -281,7 +288,7 @@ npm run build
 
 ### Publish
 
-A GitHub Release runs the `Publish` workflow. The repository needs `NPM_TOKEN`. The release tag must match `package.json` `version` (for example `v0.1.0`).
+See [CHANGELOG.md](CHANGELOG.md). A GitHub Release runs the `Publish` workflow. Add an `NPM_TOKEN` repository secret with publish access to `@bearst/lucky-mcp-server`. The release tag must match `package.json` `version` (for example `v0.1.2`). Publish does not run on push.
 
 ### License
 

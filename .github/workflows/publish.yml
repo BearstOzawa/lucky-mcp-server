@@ -29,12 +29,12 @@ jobs:
         run: npm ci
 
       - name: Verify release tag matches package version
-        if: github.event_name == "release"
+        if: github.event_name == 'release'
         run: |
           PACKAGE_VERSION="$(node -p "require('./package.json').version")"
           RELEASE_TAG="${GITHUB_REF_NAME#v}"
           if [ "$PACKAGE_VERSION" != "$RELEASE_TAG" ]; then
-            echo "Release tag $GITHUB_REF_NAME does not match package.json version $PACKAGE_VERSION"
+            echo "Release tag ${GITHUB_REF_NAME} does not match package.json version ${PACKAGE_VERSION}"
             exit 1
           fi
 
@@ -48,6 +48,6 @@ jobs:
         run: npm test
 
       - name: Publish to npm
-        run: npm publish --provenance
+        run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
