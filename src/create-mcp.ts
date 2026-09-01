@@ -26,7 +26,7 @@ const jsonObject = z.record(z.string(), z.unknown());
 export function createMcp(env: Env, http: LuckyHttp): McpServer {
   const server = new McpServer({
     name: "lucky-mcp-server",
-    version: "0.1.2",
+    version: "0.1.3",
   });
 
   registerWebTools(server, env, http);

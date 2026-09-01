@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- CI and Publish workflow packaging.
+
 ## 0.1.2
 
 - Write paths load the full web rule before PUT, so list-payload fields such as `HttpClientTimeout` are not dropped.

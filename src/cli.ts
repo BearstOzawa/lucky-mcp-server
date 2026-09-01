@@ -10,7 +10,7 @@ async function main(): Promise<void> {
   const server = createMcp(env, http);
   await server.connect(new StdioServerTransport());
   if (env.debug) {
-    console.error("lucky-mcp-server 0.1.2 running on stdio");
+    console.error("lucky-mcp-server 0.1.3 running on stdio");
   }
 }
 

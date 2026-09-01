@@ -89,7 +89,7 @@ export class LuckyHttp {
         method: request.method,
         headers: {
           accept: "application/json, text/plain, */*",
-          "user-agent": "lucky-mcp-server/0.1.2",
+          "user-agent": "lucky-mcp-server/0.1.3",
           openToken: this.openToken,
           ...(request.body === undefined ? {} : { "content-type": "application/json" }),
         },
